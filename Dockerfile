@@ -18,9 +18,9 @@ RUN apt-get -y install ucf procps iproute
 RUN apt-get -y install supervisor
 COPY etc/supervisor/ /etc/supervisor/
 
-COPY files/zabbix-agent_2.2.7+dfsg-1.1_amd64.deb /root/
+wget http://repo.zabbix.com/zabbix/2.4/ubuntu/pool/main/z/zabbix/zabbix-agent_2.4.4-1+trusty_amd64.deb
 RUN apt-get -y install --no-install-recommends pciutils libcurl3-gnutls libldap-2.4-2 cron curl jq netcat-openbsd sudo vim
-RUN dpkg -i /root/zabbix-agent_2.2.7+dfsg-1.1_amd64.deb
+RUN dpkg -i zabbix-agent_2.4.4-1+trusty_amd64.deb
 COPY etc/zabbix/ /etc/zabbix/
 COPY etc/sudoers.d/zabbix etc/sudoers.d/zabbix
 RUN chmod 400 /etc/sudoers.d/zabbix
