@@ -11,7 +11,7 @@ from docker.utils import kwargs_from_env
 
 
 def display_cpu(args):
-    detail = c.inspect_container(args.container)
+    detail = cli.inspect_container(args.container)
     if bool(detail["State"]["Running"]):
         container_id = detail['Id']
         cpu_usage = {}
@@ -31,12 +31,12 @@ def display_cpu(args):
 
 
 def display_ip(args):
-    detail = c.inspect_container(args.container)
+    detail = cli.inspect_container(args.container)
     print(detail['NetworkSettings']['IPAddress'])
 
 
 def display_memory(args):
-    detail = c.inspect_container(args.container)
+    detail = cli.inspect_container(args.container)
     if bool(detail["State"]["Running"]):
         container_id = detail['Id']
         with open('/sys/fs/cgroup/memory/docker/' + container_id + '/memory.stat', 'r') as f:
@@ -50,14 +50,14 @@ def display_memory(args):
 
 
 def display_network(args):
-    detail = c.inspect_container(args.container)
+    detail = cli.inspect_container(args.container)
     if bool(detail["State"]["Running"]):
-        ifconfig = c.execute(args.container, "ifconfig eth0")
+        ifconfig = cli.execute(args.container, "ifconfig eth0")
         m = re.search(("RX" if args.direction == "in" else "TX") + r" bytes:(\d+)", str(ifconfig))
         if m:
             print(m.group(1))
         else:
-            b = c.execute(args.container, "cat /sys/devices/virtual/net/eth0/statistics/"+("rx" if args.direction == "in" else "tx")+"_bytes")
+            b = cli.execute(args.container, "cat /sys/devices/virtual/net/eth0/statistics/"+("rx" if args.direction == "in" else "tx")+"_bytes")
             if re.match(r"\s*\d+\s*", b):
                 print(b)
             else:
@@ -67,7 +67,7 @@ def display_network(args):
 
 
 def display_status(args):
-    detail = c.inspect_container(args.container)
+    detail = cli.inspect_container(args.container)
     state = detail["State"]
     if bool(state["Paused"]):
         print(1) # Paused
@@ -102,7 +102,7 @@ network_parser.set_defaults(func=display_network)
 status_parser = subparsers.add_parser("status", help="Display the container status")
 status_parser.set_defaults(func=display_status)
 
-c = Client(**(kwargs_from_env()))
+cli = Client(**(kwargs_from_env()))
 
 args = parser.parse_args()
 args.func(args)
