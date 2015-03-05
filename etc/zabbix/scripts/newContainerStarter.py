@@ -10,8 +10,15 @@ from docker.utils import kwargs_from_env
 def create_container(args):
     containers = cli.containers(all=True)
     runContainers = [0]
+    name = args.name
+    print args.image
+    if (name is None):
+        n = re.search("\/(.*)", args.image)
+        if n:
+            name = n.groups()[0]
+            print n.groups()[0]
     for i in containers:
-        if(args.name in i['Names'][0]):
+        if(name in i['Names'][0]):
             print(i['Names'][0])
             m = re.search("_(\d+)", i['Names'][0])
             if m:
@@ -20,7 +27,7 @@ def create_container(args):
 
     runContainers.sort()
     nextContainer = runContainers[-1]+1
-    resultName = "{0}_{1}".format(args.name, nextContainer)
+    resultName = "{0}_{1}".format(name, nextContainer)
     print resultName
     os.system("docker pull {0}".format(args.image)) #remove it! just test
     os.system("docker run -d --name {0} --link opentsp_redis:opentsp_redis --link rabbitmq:rabbitmq --link opentsp-configuration:cloudConfig --link mysql:mysql {1}".format(resultName, args.image)) #remove it! just test
@@ -29,7 +36,7 @@ def create_container(args):
 parser = argparse.ArgumentParser()
 
 parser.add_argument("image", help="Container image")
-parser.add_argument("name", help="Default name")
+parser.add_argument("name", help="Default name", nargs='?', default=None)
 parser.set_defaults(func=create_container)
 
 cli = Client(**(kwargs_from_env()))
