@@ -7,6 +7,7 @@ import re
 from docker import Client
 from docker.utils import kwargs_from_env
 
+
 def create_container(args):
     containers = cli.containers(all=True)
     runContainers = [0]
@@ -18,7 +19,7 @@ def create_container(args):
             name = n.groups()[0]
             print n.groups()[0]
     for i in containers:
-        if(name in i['Names'][0]):
+        if (name in i['Names'][0]):
             print(i['Names'][0])
             m = re.search("_(\d+)", i['Names'][0])
             if m:
@@ -26,11 +27,13 @@ def create_container(args):
                 runContainers.append(int(m.groups()[0]))
 
     runContainers.sort()
-    nextContainer = runContainers[-1]+1
+    nextContainer = runContainers[-1] + 1
     resultName = "{0}_{1}".format(name, nextContainer)
     print resultName
-    os.system("docker pull {0}".format(args.image)) #remove it! just test
-    os.system("docker run -d --name {0} --link opentsp_redis:opentsp_redis --link rabbitmq:rabbitmq --link opentsp-configuration:cloudConfig --link mysql:mysql {1}".format(resultName, args.image)) #remove it! just test
+    os.system("docker pull {0}".format(args.image))  # remove it! just test
+    os.system(
+        "docker run -d --name {0} --link opentsp_redis:opentsp_redis --link rabbitmq:rabbitmq --link opentsp-configuration:cloudConfig --link mysql:mysql {1}".format(
+            resultName, args.image))  # remove it! just test
 
 
 parser = argparse.ArgumentParser()
