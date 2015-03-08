@@ -22,4 +22,4 @@ sed -i "s/^ServerActive\=.*/ServerActive\=$SERVER/" /etc/zabbix/zabbix_agentd.co
 
 #exec /usr/bin/supervisord
 
-service docker-aggent start
+service zabbix-agent start
