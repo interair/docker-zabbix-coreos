@@ -34,6 +34,7 @@ RUN chown zabbix:crontab /var/spool/cron/crontabs/zabbix
 
 COPY run.sh /
 RUN chmod +x /run.sh
+RUN chmod -R a+x /etc/zabbix/scripts/
 
 EXPOSE 10050
 ENTRYPOINT ["/run.sh"]
