@@ -19,7 +19,6 @@ mkdir -p /host/var/run/
 sed -i "s/^Hostname\=.*/Hostname\=$HOSTNAME/" /etc/zabbix/zabbix_agentd.conf
 sed -i "s/^Server\=.*/Server\=$SERVER/" /etc/zabbix/zabbix_agentd.conf
 sed -i "s/^ServerActive\=.*/ServerActive\=$SERVER/" /etc/zabbix/zabbix_agentd.conf
-
-#exec /usr/bin/supervisord
-
 service zabbix-agent start
+exec /usr/bin/supervisord
+
