@@ -18,10 +18,10 @@ RUN apt-get -y install ucf procps iproute
 RUN apt-get -y install supervisor
 COPY etc/supervisor/ /etc/supervisor/
 RUN apt-get -y install wget
-RUN apt-get install libcurl3
-RUN wget http://repo.zabbix.com/zabbix/2.4/ubuntu/pool/main/z/zabbix/zabbix-agent_2.4.4-1+trusty_amd64.deb
+RUN apt-get -y install libcurl3
+RUN wget http://repo.zabbix.com/zabbix/2.4/ubuntu/pool/main/z/zabbix/zabbix-agent_2.4.5-1+trusty_amd64.deb
 RUN apt-get -y install --no-install-recommends pciutils libcurl3-gnutls libldap-2.4-2 cron curl jq netcat-openbsd sudo vim
-RUN dpkg -i zabbix-agent_2.4.4-1+trusty_amd64.deb
+RUN dpkg -i zabbix-agent_2.4.5-1+trusty_amd64.deb
 RUN apt-get -y install python-pip
 RUN apt-get update && apt-get install -y docker.io
 RUN usermod -aG docker root
