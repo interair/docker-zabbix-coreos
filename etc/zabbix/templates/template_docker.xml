@@ -573,7 +573,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Custom Template Docker:proc.num[docker].last()}=0</expression>
+            <expression>{Custom Template Docker:docker.container.count[running].last()}=0</expression>
             <name>Docker is not running on {HOST.NAME}</name>
             <url/>
             <status>0</status>
