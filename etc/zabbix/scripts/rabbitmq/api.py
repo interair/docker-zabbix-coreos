@@ -18,7 +18,7 @@ logging.basicConfig(filename='/var/log/zabbix/rabbitmq_zabbix.log', level=loggin
 class RabbitMQAPI(object):
     '''Class for RabbitMQ Management API'''
 
-    def __init__(self, user_name='guest', password='guest', host_name='',
+    def __init__(self, user_name='guest', password='guest', host_name='172.17.42.1',
                  port=15672, conf='etc/zabbix/zabbix_agentd.conf', senderhostname=None):
         self.user_name = user_name
         self.password = password
