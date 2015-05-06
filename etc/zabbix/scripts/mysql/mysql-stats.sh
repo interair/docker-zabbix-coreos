@@ -5,8 +5,7 @@ cd "$(dirname "$0")"
 . ../conf/mysql.conf
 
 ##### PARAMETERS #####
-RESERVED="$1"
-METRIC="$2"
+METRIC="$1"
 
 #
 MYSQLADMIN="/usr/bin/mysqladmin"
