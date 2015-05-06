@@ -29,7 +29,7 @@ sed -i "s/=RABBITMQ_HOSTNAME/=$RABBITMQ_HOSTNAME/" /etc/zabbix/scripts/conf/rabb
 sed -i "s/=RABBITMQ_USERNAME/=$RABBITMQ_USERNAME/" /etc/zabbix/scripts/conf/rabbitmq.conf
 sed -i "s/=RABBITMQ_PASSWORD/=$RABBITMQ_PASSWORD/" /etc/zabbix/scripts/conf/rabbitmq.conf
 
-sed -i "s/=REDIS_HOSTNAME/=$REDIS_HOSTNAME/" /etc/zabbix/scripts/conf/zabbix-redis.conf
+sed -i "s/=REDIS_HOSTNAME/=$REDIS_HOSTNAME/" /etc/zabbix/scripts/conf/redis.conf
 
 service zabbix-agent start
 exec /usr/bin/supervisord
