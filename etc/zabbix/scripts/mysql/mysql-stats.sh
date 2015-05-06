@@ -4,9 +4,6 @@
 cd "$(dirname "$0")"
 . ../conf/mysql.conf
 
-if [[ -z "$1" || -z "$2" ]]; then
-  exit 1
-fi
 ##### PARAMETERS #####
 RESERVED="$1"
 METRIC="$2"
@@ -39,7 +36,7 @@ if [ ${DELTA_TIME} -lt ${EXEC_TIMEOUT} ]; then
   sleep $((${EXEC_TIMEOUT} - ${DELTA_TIME}))
 elif [ ${DELTA_TIME} -gt ${CACHE_TTL} ]; then
   echo "" >> "${CACHE_FILE}" # !!!
-  DATACACHE=`${MYSQLADMIN} -u${MYSQL_USER} -p${MYSQL_PASSWORD} -P${MYSQL_PORT} -h${MYSQL_HOST} -p extended-status 2>&1`
+  DATACACHE=`${MYSQLADMIN} -u${MYSQL_USER} -p${MYSQL_PASSWORD} -P${MYSQL_PORT} -h${MYSQL_HOST} extended-status 2>&1`
   echo "${DATACACHE}" > "${CACHE_FILE}" # !!!
   chmod 640 "${CACHE_FILE}"
 fi
