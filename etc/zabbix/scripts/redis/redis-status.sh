@@ -10,10 +10,6 @@ DB="$3"
 
 PORT="6379"
 
-if [[ -n "$1" ]]; then
-    REDIS_HOSTNAME="$1"
-fi
-
 CACHETTL="55" # Время действия кеша в секундах (чуть меньше чем период опроса элементов)
 CACHE="/tmp/redis-status-`echo $REDIS_HOSTNAME | md5sum | cut -d" " -f1`.cache"
 
