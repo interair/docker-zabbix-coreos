@@ -1,5 +1,9 @@
 #!/bin/bash
 ##### OPTIONS VERIFICATION #####
+
+cd "$(dirname "$0")"
+. ../conf/mysql.conf
+
 if [[ -z "$1" || -z "$2" ]]; then
   exit 1
 fi

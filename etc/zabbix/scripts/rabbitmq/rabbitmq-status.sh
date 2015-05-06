@@ -4,6 +4,7 @@
 #
 #UserParameter=rabbitmq[*],<%= zabbix_script_dir %>/rabbitmq-status.sh
 cd "$(dirname "$0")"
+. ../conf/rabbimq.conf
 
 
 TYPE_OF_CHECK=$1

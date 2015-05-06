@@ -2,19 +2,20 @@
 
 #Redis status
 
-SERV="$1"
+cd "$(dirname "$0")"
+. ../conf/redis.conf
+
 METRIC="$2"
-DB=$REDIS_HOSTNAME
+DB="$3"
 
 PORT="6379"
 
-if [[ -z "$1" ]]; then
-    echo "Please set server"
-    exit 1
+if [[ -n "$1" ]]; then
+    REDIS_HOSTNAME="$1"
 fi
 
 CACHETTL="55" # Время действия кеша в секундах (чуть меньше чем период опроса элементов)
-CACHE="/tmp/redis-status-`echo $SERV | md5sum | cut -d" " -f1`.cache"
+CACHE="/tmp/redis-status-`echo $REDIS_HOSTNAME | md5sum | cut -d" " -f1`.cache"
 
 if [ -s "$CACHE" ]; then
     TIMECACHE=`stat -c"%Z" "$CACHE"`
@@ -25,7 +26,7 @@ fi
 TIMENOW=`date '+%s'`
 
 if [ "$(($TIMENOW - $TIMECACHE))" -gt "$CACHETTL" ]; then
-    (echo -en "INFO\r\n"; sleep 1;) | nc -w1 $SERV $PORT > $CACHE || exit 1
+    (echo -en "INFO\r\n"; sleep 1;) | nc -w1 $REDIS_HOSTNAME $PORT > $CACHE || exit 1
 fi
 
 FIRST_ELEMENT=1
