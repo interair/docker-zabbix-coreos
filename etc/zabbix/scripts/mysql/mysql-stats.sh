@@ -6,10 +6,7 @@ fi
 ##### PARAMETERS #####
 RESERVED="$1"
 METRIC="$2"
-USER="${3:-user}"
-PASS="${4:-pass}"
-PORT="${5:-port}"
-HOST="${5:-host}"
+
 #
 MYSQLADMIN="/usr/bin/mysqladmin"
 MYSQL="/usr/bin/mysql"
@@ -19,11 +16,11 @@ EXEC_TIMEOUT="1"
 NOW_TIME=`date '+%s'`
 ##### RUN #####
 if [ "${METRIC}" = "alive" ]; then
-  ${MYSQLADMIN} -u${USER} -p${PASS} -P${PORT} -h${HOST} ping | grep alive | wc -l | head -n1
+  ${MYSQLADMIN} -u${MYSQL_USER} -p${MYSQL_PASSWORD} -P${MYSQL_PORT} -h${MYSQL_HOST} ping | grep alive | wc -l | head -n1
   exit 0
 fi
 if [ "${METRIC}" = "version" ]; then
-  ${MYSQL} -u${USER} -p${PASS} -P${PORT} -h${HOST} -V | sed -e 's/^.*\(ver.*\)$/\1/gI' | head -n1
+  ${MYSQL} -u${MYSQL_USER} -p${MYSQL_PASSWORD} -P${MYSQL_PORT} -h${MYSQL_HOST} -V | sed -e 's/^.*\(ver.*\)$/\1/gI' | head -n1
   exit 0
 fi
 #
@@ -38,7 +35,7 @@ if [ ${DELTA_TIME} -lt ${EXEC_TIMEOUT} ]; then
   sleep $((${EXEC_TIMEOUT} - ${DELTA_TIME}))
 elif [ ${DELTA_TIME} -gt ${CACHE_TTL} ]; then
   echo "" >> "${CACHE_FILE}" # !!!
-  DATACACHE=`${MYSQLADMIN} -u${USER} -p${PASS} -P${PORT} -h${HOST} -p extended-status 2>&1`
+  DATACACHE=`${MYSQLADMIN} -u${MYSQL_USER} -p${MYSQL_PASSWORD} -P${MYSQL_PORT} -h${MYSQL_HOST} -p extended-status 2>&1`
   echo "${DATACACHE}" > "${CACHE_FILE}" # !!!
   chmod 640 "${CACHE_FILE}"
 fi

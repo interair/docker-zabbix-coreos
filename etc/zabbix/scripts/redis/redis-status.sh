@@ -4,7 +4,7 @@
 
 SERV="$1"
 METRIC="$2"
-DB="$3"
+DB=$REDIS_HOSTNAME
 
 PORT="6379"
 
