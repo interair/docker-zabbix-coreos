@@ -14,7 +14,7 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
 RUN apt-get -y install ucf procps iproute
-
+apt-get install mysql-client
 RUN apt-get -y install supervisor
 COPY etc/supervisor/ /etc/supervisor/
 RUN apt-get -y install wget
