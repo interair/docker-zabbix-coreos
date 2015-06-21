@@ -23,7 +23,6 @@ COPY etc/zabbix/ /etc/zabbix/
 COPY etc/sudoers.d/zabbix etc/sudoers.d/zabbix
 RUN chmod 400 /etc/sudoers.d/zabbix
 COPY etc/zabbix/crontab /var/spool/cron/crontabs/zabbix
-RUN pip install -r /etc/zabbix/scripts/logmon/requirements.txt
 RUN chmod 600 /var/spool/cron/crontabs/zabbix
 RUN chown zabbix:crontab /var/spool/cron/crontabs/zabbix
 
