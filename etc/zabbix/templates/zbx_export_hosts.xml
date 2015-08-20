@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>2.0</version>
+    <date>2015-08-20T20:57:09Z</date>
+    <groups>
+        <group>
+            <name>Linux servers</name>
+        </group>
+        <group>
+            <name>Rabbit Servers</name>
+        </group>
+        <group>
+            <name>Templates</name>
+        </group>
+        <group>
+            <name>Templates_Custom</name>
+        </group>
+        <group>
+            <name>Zabbix servers</name>
+        </group>
+    </groups>
+    <hosts>
+        <host>
+            <host>zabbix-agent</host>
+            <name>zabbix-agent</name>
+            <description/>
+            <proxy/>
+            <status>0</status>
+            <ipmi_authtype>-1</ipmi_authtype>
+            <ipmi_privilege>2</ipmi_privilege>
+            <ipmi_username/>
+            <ipmi_password/>
+            <templates>
+                <template>
+                    <name>MyTemplate_MySQL_Stats_agent</name>
+                </template>
+                <template>
+                    <name>Template App Docker</name>
+                </template>
+                <template>
+                    <name>Template App MySQL</name>
+                </template>
+                <template>
+                    <name>Template App RabbitMQ v3</name>
+                </template>
+                <template>
+                    <name>Template OS Linux</name>
+                </template>
+                <template>
+                    <name>Template Redis 2</name>
+                </template>
+                <template>
+                    <name>User Template Docker Container</name>
+                </template>
+            </templates>
+            <groups>
+                <group>
+                    <name>Linux servers</name>
+                </group>
+                <group>
+                    <name>Rabbit Servers</name>
+                </group>
+                <group>
+                    <name>Templates</name>
+                </group>
+                <group>
+                    <name>Templates_Custom</name>
+                </group>
+                <group>
+                    <name>Zabbix servers</name>
+                </group>
+            </groups>
+            <interfaces>
+                <interface>
+                    <default>1</default>
+                    <type>1</type>
+                    <useip>0</useip>
+                    <ip>172.17.42.1</ip>
+                    <dns>zabbix-agent</dns>
+                    <port>10050</port>
+                    <bulk>1</bulk>
+                    <interface_ref>if1</interface_ref>
+                </interface>
+            </interfaces>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <macros/>
+            <inventory/>
+        </host>
+    </hosts>
+</zabbix_export>
