@@ -25,7 +25,7 @@ RUN dpkg -i zabbix-agent_2.4.5-1+trusty_amd64.deb
 RUN curl -sSL https://get.docker.com/ | sh
 RUN usermod -aG docker root
 
-RUN apt-get install python-dev
+RUN apt-get -y install python-dev
 RUN apt-get -y install python-pip
 
 RUN pip install websocket click docker-py
