@@ -21,10 +21,12 @@ RUN apt-get -y install libcurl3
 RUN wget http://repo.zabbix.com/zabbix/2.4/ubuntu/pool/main/z/zabbix/zabbix-agent_2.4.5-1+trusty_amd64.deb
 RUN apt-get -y install --no-install-recommends pciutils libcurl3-gnutls libldap-2.4-2 cron curl jq netcat-openbsd sudo vim
 RUN dpkg -i zabbix-agent_2.4.5-1+trusty_amd64.deb
-RUN apt-get -y install python-pip
-RUN curl -sSL https://get.docker.com/ | sh
 
+RUN curl -sSL https://get.docker.com/ | sh
 RUN usermod -aG docker root
+
+RUN apt-get install python-dev
+RUN apt-get -y install python-pip
 
 RUN pip install websocket click docker-py
 RUN pip install --upgrade six
