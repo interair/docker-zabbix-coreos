@@ -1,10 +1,9 @@
-FROM debian:sid
+FROM debian:jessie
 MAINTAINER Boris HUISGEN <bhuisgen@hbis.fr>
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -y update
-RUN apt-get -y upgrade
 
 RUN apt-get -y install locales
 RUN dpkg-reconfigure locales && locale-gen C.UTF-8 && /usr/sbin/update-locale LANG=C.UTF-8
@@ -23,7 +22,8 @@ RUN wget http://repo.zabbix.com/zabbix/2.4/ubuntu/pool/main/z/zabbix/zabbix-agen
 RUN apt-get -y install --no-install-recommends pciutils libcurl3-gnutls libldap-2.4-2 cron curl jq netcat-openbsd sudo vim
 RUN dpkg -i zabbix-agent_2.4.5-1+trusty_amd64.deb
 RUN apt-get -y install python-pip
-RUN apt-get update && apt-get install -y docker.io
+RUN curl -sSL https://get.docker.com/ | sh
+
 RUN usermod -aG docker root
 RUN pip install docker-py
 COPY etc/zabbix/ /etc/zabbix/
@@ -39,4 +39,5 @@ RUN chmod -R a+x /etc/zabbix/scripts/
 
 EXPOSE 10050
 ENTRYPOINT ["/run.sh"]
+ENV DOCKER_HOST=tcp://swarm:2375
 CMD [""]
