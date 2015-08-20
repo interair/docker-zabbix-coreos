@@ -34,3 +34,15 @@ TODO: automate this
 3. Import files from [/etc/zabbix/templates](https://bitbucket.org/codeabovelab/ni-opentsp-zabbix-agent/src/master/etc/zabbix/templates/?at=master) :
 
 * Import zbx_export_hosts.xml in last order
+
+4. The result will be:
+
+![zabbix_result1.png](https://bitbucket.org/repo/MqG9eq/images/2956885288-zabbix_result1.png)
+
+**Monitoring->Latest data**
+
+![zabbix_result2.png](https://bitbucket.org/repo/MqG9eq/images/1208408526-zabbix_result2.png)
+
+**Graphs**
+
+![zabbix_result3.png](https://bitbucket.org/repo/MqG9eq/images/1003286710-zabbix_result3.png)
