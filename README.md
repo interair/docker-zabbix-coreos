@@ -12,6 +12,7 @@ docker run -d -p 10050:10050 -v /proc:/host/proc -v /sys:/host/sys -v /sys/fs/cg
      -e RABBITMQ_HOSTNAME="rabbitmq" -e RABBITMQ_USERNAME="admin" -e RABBITMQ_PASSWORD="opentsp" \
      -e MYSQL_HOST="mysql" -e MYSQL_PORT="3306" -e MYSQL_USER="admin" -e MYSQL_PASSWORD="opentsp" \
      -e REDIS_HOSTNAME="redis" \
+     --dns-search=weave.local \
          wddocker.mapbar.com/docker-zabbix-agent zabbix-agent zabbix-server
 
 ```
