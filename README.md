@@ -3,8 +3,11 @@
 This Docker container provides a patched Zabbix agent to monitor a real server and all his containers.
 It's monitor docker via python api
 It has additional scripts for monitoring:
+
 * rabbitMQ (via python + HTTP API)  https://github.com/jasonmcintosh/rabbitmq-zabbix
+
 * mysql
+
 * redis
 
 ## Installation ##
