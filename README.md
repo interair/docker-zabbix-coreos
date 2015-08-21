@@ -11,6 +11,8 @@ It has additional scripts for monitoring:
 
 ### Zabbix agent installation: ###
 
+or just run [script](https://bitbucket.org/codeabovelab/ni-opentsp-scripts/src/master/install_monitoring_tools.sh?at=master)
+
 ```
 #!shell
 docker run -d -p 10050:10050 -v /proc:/host/proc -v /sys:/host/sys -v /sys/fs/cgroup:/sys/fs/cgroup  -v /dev:/host/dev -v /var/run/docker.sock:/var/run/docker.sock \
