@@ -48,6 +48,8 @@ TODO: automate this
 
 ![zabbix_result2.png](https://bitbucket.org/repo/MqG9eq/images/1208408526-zabbix_result2.png)
 
+![zabbix_result5.png](https://bitbucket.org/repo/MqG9eq/images/943434904-zabbix_result5.png)
+
 **Graphs**
 
 ![zabbix_result3.png](https://bitbucket.org/repo/MqG9eq/images/1003286710-zabbix_result3.png)
