@@ -59,6 +59,8 @@
                     <item_prototypes>
                         <item_prototype>
                             <name>Container {#HCONTAINERID} is running</name>
+                            
+                            <params>{#HCONTAINERID}</params>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -106,6 +108,8 @@
                         </item_prototype>
                         <item_prototype>
                             <name>CPU system time {#HCONTAINERID}</name>
+                            <description>CPU system time</description>
+                            <params>{#HCONTAINERID}</params>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>1</multiplier>
@@ -137,7 +141,6 @@
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description/>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -149,6 +152,8 @@
                         </item_prototype>
                         <item_prototype>
                             <name>CPU user time {#HCONTAINERID}</name>
+                            <description>CPU user time</description>
+                            <params>{#HCONTAINERID}</params>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>1</multiplier>
@@ -180,7 +185,7 @@
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description/>
+                           
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -192,6 +197,8 @@
                         </item_prototype>
                         <item_prototype>
                             <name>Used cache memory {#HCONTAINERID}</name>
+                            <description>Used cache memory</description>
+                            <params>{#HCONTAINERID}</params>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -235,6 +242,8 @@
                         </item_prototype>
                         <item_prototype>
                             <name>Used RSS memory {#HCONTAINERID}</name>
+                            <description>Used RSS memory</description>
+                            <params>{#HCONTAINERID}</params>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -266,7 +275,7 @@
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description/>
+                         
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -278,6 +287,8 @@
                         </item_prototype>
                         <item_prototype>
                             <name>Used swap {#HCONTAINERID}</name>
+                            <description>Used swap</description>
+                            <params>{#HCONTAINERID}</params>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -309,7 +320,7 @@
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description/>
+                           
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -324,6 +335,8 @@
                     <graph_prototypes>
                         <graph_prototype>
                             <name>CPU utilization of {#HCONTAINERID} container</name>
+                            <description>CPU utilization</description>
+                            <params>{#HCONTAINERID}</params>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -368,6 +381,8 @@
                         </graph_prototype>
                         <graph_prototype>
                             <name>Memory usage of {#HCONTAINERID} container</name>
+                            <description>Memory usage</description>
+                            <params>{#HCONTAINERID}</params>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -424,6 +439,7 @@
                         </graph_prototype>
                         <graph_prototype>
                             <name>State of {#HCONTAINERID} container</name>
+                            <params>{#HCONTAINERID}</params>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
