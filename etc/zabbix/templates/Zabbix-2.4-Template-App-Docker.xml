@@ -4,7 +4,10 @@
     <date>2015-08-27T21:57:37Z</date>
     <groups>
         <group>
-            <name>Linux servers</name>
+            <name>Opentsp</name>
+        </group>
+        <group>
+            <name>Docker</name>
         </group>
     </groups>
     <templates>
@@ -14,7 +17,10 @@
             <description/>
             <groups>
                 <group>
-                    <name>Linux servers</name>
+                    <name>Opentsp</name>
+                </group>
+                <group>
+                    <name>Docker</name>
                 </group>
             </groups>
             <applications>
