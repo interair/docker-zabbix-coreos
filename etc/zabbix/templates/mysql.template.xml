@@ -4,7 +4,10 @@
     <date>2014-04-30T08:53:32Z</date>
     <groups>
         <group>
-            <name>Templates_Custom</name>
+            <name>Opentsp</name>
+        </group>
+        <group>
+            <name>Mysql</name>
         </group>
     </groups>
     <templates>
@@ -13,7 +16,10 @@
             <name>MyTemplate_MySQL_Stats_agent</name>
             <groups>
                 <group>
-                    <name>Templates_Custom</name>
+                    <name>Opentsp</name>
+                </group>
+                <group>
+                    <name>Mysql</name>
                 </group>
             </groups>
             <applications>
