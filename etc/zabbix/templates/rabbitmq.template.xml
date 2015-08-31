@@ -4,10 +4,10 @@
     <date>2015-03-10T18:53:51Z</date>
     <groups>
         <group>
-            <name>Rabbit Servers</name>
+            <name>RabbitMQ</name>
         </group>
         <group>
-            <name>Templates</name>
+            <name>Opentsp</name>
         </group>
     </groups>
     <templates>
@@ -16,10 +16,10 @@
             <name>Template App RabbitMQ v3</name>
             <groups>
                 <group>
-                    <name>Rabbit Servers</name>
+                    <name>RabbitMQ</name>
                 </group>
                 <group>
-                    <name>Templates</name>
+                    <name>Opentsp</name>
                 </group>
             </groups>
             <applications>
