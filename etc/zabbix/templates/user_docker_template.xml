@@ -4,7 +4,10 @@
     <date>2014-11-18T11:40:40Z</date>
     <groups>
         <group>
-            <name>Templates</name>
+            <name>Docker</name>
+        </group>
+        <group>
+            <name>Opentsp</name>
         </group>
     </groups>
     <templates>
@@ -14,7 +17,10 @@
             <description/>
             <groups>
                 <group>
-                    <name>Templates</name>
+                    <name>Opentsp</name>
+                </group>
+                <group>
+                    <name>Docker</name>
                 </group>
             </groups>
             <applications>
