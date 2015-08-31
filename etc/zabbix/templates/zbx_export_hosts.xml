@@ -4,19 +4,19 @@
     <date>2015-08-20T20:57:09Z</date>
     <groups>
         <group>
-            <name>Linux servers</name>
+            <name>Opentp</name>
         </group>
         <group>
-            <name>Rabbit Servers</name>
+            <name>RabbitMQ</name>
         </group>
         <group>
-            <name>Templates</name>
+            <name>Mysql</name>
         </group>
         <group>
-            <name>Templates_Custom</name>
+            <name>Docker</name>
         </group>
         <group>
-            <name>Zabbix servers</name>
+            <name>Redis</name>
         </group>
     </groups>
     <hosts>
