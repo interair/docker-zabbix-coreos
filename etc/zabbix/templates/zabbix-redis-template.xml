@@ -4,7 +4,10 @@
     <date>2013-01-19T20:39:15Z</date>
     <groups>
         <group>
-            <name>Templates</name>
+            <name>Redis</name>
+        </group>
+        <group>
+            <name>Opentsp</name>
         </group>
     </groups>
     <templates>
@@ -13,7 +16,10 @@
             <name>Template Redis 2</name>
             <groups>
                 <group>
-                    <name>Templates</name>
+                    <name>Redis</name>
+                </group>
+                <group>
+                    <name>Opentsp</name>
                 </group>
             </groups>
             <applications>
