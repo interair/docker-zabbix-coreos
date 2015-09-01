@@ -32,7 +32,7 @@ def start(image_name):
     start=labels["start-string"]
     
     try:
-        req=requests.get("http://swarm:8761/info/nodesNameForApp?imageName="+image_name)
+        req=requests.get("http://opentsp-gateway-eureka:8761/info/nodesNameForApp?imageName="+image_name)
 
         nodes=""
         for index, elem in enumerate(req.json()):
