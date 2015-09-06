@@ -40,14 +40,14 @@ def start(image_name):
                 nodes+ "|"
             nodes += elem 
 
-        constraint="%opts -e constraint:node!=/*" + nodes + "*/"
+        constraint="run -e constraint:node!=/*" + nodes + "*/"
         print constraint
-        start=start.replace("%opts", constraint, 1)
+        start=start.replace("run", constraint, 1)
     except Exception as e:
         print "can't calulate constraints {0} ".format(e)
     
 
-    result=start.replace("%opts","'" + labels["opts"] + "'",1).replace("%memory", labels["memory"],1).replace("%repository", registry,1).replace("%LOG_DIR", LOG_DIR,1)
+    result=start.replace("%memory", labels["memory"],1).replace("%repository", registry,1).replace("%LOG_DIR", LOG_DIR,1)
     if "%name" in labels["start-string"]:
             result=result.replace("%name",docker_name_calculator.calculate(full_name))
 
