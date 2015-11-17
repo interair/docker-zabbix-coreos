@@ -9,16 +9,16 @@ import sys
 import os
 import json
 import subprocess
-import docker_name_calculator
-import start_container
 import requests
 
 @click.command()
 @click.argument('id')
 def main(id):
-    
-    req=requests.post("http://opentsp-gateway-eureka:8761/ui/api/containers/"+image_name+"/scale")
-    print req
+    try:
+        req=requests.post("http://opentsp-gateway-eureka:8761/ui/api/containers/"+id+"/scale")
+        print req
+    except Exception, e:
+        print "can't schedule container {0} ".format(e)
 
 
 
