@@ -17,16 +17,9 @@ import requests
 @click.argument('id')
 def main(id):
     
-    result=getName(id)
-    start_container.start(result)
-    
-    
-def getName(id):
-
     req=requests.post("http://opentsp-gateway-eureka:8761/ui/api/containers/"+image_name+"/scale")
+    print req
 
-    print req        
-    return req
 
 
 if __name__ == '__main__':
