@@ -22,17 +22,11 @@ def main(id):
     
     
 def getName(id):
-    """Gets image name by id"""
-    cli = Client(**(kwargs_from_env()))
 
-    docker_inspect='docker inspect -f "{{json .Config.Image }}" '+ id
-	
-    image_name=json.loads(subprocess.check_output(docker_inspect, shell=True))
+    req=requests.post("http://opentsp-gateway-eureka:8761/ui/api/containers/"+image_name+"/scale")
 
-    result=image_name.rsplit('/')[1]
-
-    print result        
-    return result
+    print req        
+    return req
 
 
 if __name__ == '__main__':
