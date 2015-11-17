@@ -1,5 +1,5 @@
 FROM debian:jessie
-MAINTAINER Boris HUISGEN <bhuisgen@hbis.fr>
+MAINTAINER navinfo
 
 ENV DEBIAN_FRONTEND noninteractive
 
