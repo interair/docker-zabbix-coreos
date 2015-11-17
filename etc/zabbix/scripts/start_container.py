@@ -26,9 +26,7 @@ def start(image_name):
             payload = {'image': image_name}
         json_dump = json.dumps(payload)
         print json_dump
-        req = \
-            requests.post('http://opentsp-gateway-eureka:8761/ui/apicontainers/create'
-                          , data=json_dump)
+        req = requests.post('http://opentsp-gateway-eureka:8761/ui/apicontainers/create', data=json_dump)
         print req
     except Exception, e:
 
@@ -37,6 +35,3 @@ def start(image_name):
 
 if __name__ == '__main__':
     main()
-
-
-			
