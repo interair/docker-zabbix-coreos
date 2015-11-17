@@ -20,7 +20,5 @@ def main(id):
     except Exception, e:
         print "can't schedule container {0} ".format(e)
 
-
-
 if __name__ == '__main__':
     main()
