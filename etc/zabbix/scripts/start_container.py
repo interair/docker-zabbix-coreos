@@ -7,9 +7,6 @@ import os
 import json
 import requests
 import subprocess
-
-
-
 @click.command()
 @click.argument('image_name')
 def main(image_name):
@@ -22,8 +19,10 @@ def start(image_name):
         words = image_name.split(':')
         if len(words) == 2:
             payload = {'image': words[0], 'tag': words[1]}
-        else:
+        elif len(words) == 1:
             payload = {'image': image_name}
+        else:
+            raise ValueError('Wrong image name', image_name)
         json_dump = json.dumps(payload)
         print json_dump
         req = requests.post('http://opentsp-gateway-eureka:8761/ui/apicontainers/create', data=json_dump)
@@ -31,7 +30,6 @@ def start(image_name):
     except Exception, e:
 
         print "can't schedule container {0} ".format(e)
-
 
 if __name__ == '__main__':
     main()
