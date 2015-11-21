@@ -1,4 +1,4 @@
-FROM ubuntu:15.10
+FROM debian:jessie
 MAINTAINER navinfo
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -29,7 +29,7 @@ RUN apt-get -y install python-dev
 RUN apt-get -y install python-pip
 
 RUN pip install websocket click docker-py
-RUN pip install --upgrade six
+
 COPY etc/zabbix/ /etc/zabbix/
 COPY etc/sudoers.d/zabbix etc/sudoers.d/zabbix
 RUN chmod 400 /etc/sudoers.d/zabbix
