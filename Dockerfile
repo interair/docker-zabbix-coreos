@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM ubuntu:15.10
 MAINTAINER navinfo
 
 ENV DEBIAN_FRONTEND noninteractive
