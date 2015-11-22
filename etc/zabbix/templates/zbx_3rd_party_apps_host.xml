@@ -21,8 +21,8 @@
     </groups>
     <hosts>
         <host>
-            <host>zabbix-agent</host>
-            <name>zabbix-agent</name>
+            <host>zabbix-agent-main</host>
+            <name>zabbix-agent-main</name>
             <description/>
             <proxy/>
             <status>0</status>
