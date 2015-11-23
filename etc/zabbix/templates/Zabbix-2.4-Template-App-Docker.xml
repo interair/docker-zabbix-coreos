@@ -380,7 +380,7 @@
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template App Docker:docker.cpu[{#FCONTAINERID},user].avg(5m)}&gt;40</expression>
+                            <expression>{Template App Docker:docker.cpu[{#FCONTAINERID},user].avg(5m)}&gt;90</expression>
                             <name>CPU user time {#HCONTAINERID}</name>
                             <url/>
                             <status>0</status>
