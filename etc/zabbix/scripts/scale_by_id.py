@@ -11,8 +11,6 @@ from requests.auth import HTTPBasicAuth
 @click.argument('id')
 def main(id):
     try:
-        print "http://opentsp-gateway-eureka:8761/ui/api/containers/"+id+"/scale"
-
         req=requests.post("http://opentsp-gateway-eureka:8761/ui/api/containers/"+id+"/scale", auth=HTTPBasicAuth('admin', 'password'))
         print(req.text)
     except Exception, e:
