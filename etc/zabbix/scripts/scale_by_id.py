@@ -3,10 +3,6 @@
 """Gets image name by id of existing container and start new same container"""
 
 import click
-from docker import Client
-from docker.utils import kwargs_from_env
-import sys
-import os
 import json
 import requests
 from requests.auth import HTTPBasicAuth
