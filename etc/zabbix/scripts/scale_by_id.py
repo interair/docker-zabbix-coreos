@@ -14,7 +14,6 @@ def main(id):
         print "http://opentsp-gateway-eureka:8761/ui/api/containers/"+id+"/scale"
 
         req=requests.post("http://opentsp-gateway-eureka:8761/ui/api/containers/"+id+"/scale", auth=HTTPBasicAuth('admin', 'password'))
-        print req
         print(req.text)
     except Exception, e:
         print "can't schedule container {0} ".format(e)
