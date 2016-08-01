@@ -26,7 +26,6 @@ docker run -d -p 10050:10050 -v /proc:/host/proc -v /sys:/host/sys -v /sys/fs/cg
          wddocker.mapbar.com/docker-zabbix-agent <zabbix-agent-host-name> zabbix-server
 
 ```
-##  or just run [script](https://bitbucket.org/codeabovelab/ni-opentsp-scripts/src/master/install_monitoring_agent.sh?at=master) ##
 
 ### Server side installation ###
 TODO: automate this
@@ -34,9 +33,9 @@ TODO: automate this
 1.Login to the web (Admin/zabbix)
 2.Navigate to "Configuration"->"Hosts" and push "Import" button
 
-![zabbix_configuration.png](https://bitbucket.org/repo/MqG9eq/images/1581131486-zabbix_configuration.png)
+![zabbix_configuration.png](https://raw.githubusercontent.com/interair/docker-zabbix-agent/master/img/zabbix_configuration.png)
 
-3.Import files from [/etc/zabbix/templates](https://bitbucket.org/codeabovelab/ni-opentsp-zabbix-agent/src/master/etc/zabbix/templates/?at=master) :
+3.Import files from [/etc/zabbix/templates](https://github.com/interair/docker-zabbix-agent/tree/master/etc/zabbix/templates) :
 
 * Import zbx_3rd_party_apps_host.xml or zbx_base_host.xml in last order 
 
@@ -44,14 +43,14 @@ TODO: automate this
 
 5.The result will be:
 
-![zabbix_result1.png](https://bitbucket.org/repo/MqG9eq/images/2956885288-zabbix_result1.png)
+![zabbix_result1.png](https://raw.githubusercontent.com/interair/docker-zabbix-agent/master/img/zabbix_result1.png)
 
 **Monitoring->Latest data**
 
-![zabbix_result2.png](https://bitbucket.org/repo/MqG9eq/images/1208408526-zabbix_result2.png)
+![zabbix_result2.png](https://raw.githubusercontent.com/interair/docker-zabbix-agent/master/img/zabbix_result2.png)
 
-![zabbix_result5.png](https://bitbucket.org/repo/MqG9eq/images/943434904-zabbix_result5.png)
+![zabbix_result5.png](https://raw.githubusercontent.com/interair/docker-zabbix-agent/master/img/zabbix_result5.png)
 
 **Graphs**
 
-![zabbix_result3.png](https://bitbucket.org/repo/MqG9eq/images/1003286710-zabbix_result3.png)
+![zabbix_result3.png](https://raw.githubusercontent.com/interair/docker-zabbix-agent/master/img/zabbix_result3.png)
